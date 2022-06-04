@@ -11,7 +11,7 @@ const NavBar = () => {
           <div className="NavbarContainer">
             <div className="NavLogo">
               <img src={Logo} />
-              <p>Home Food</p>
+              <p>House Food</p>
             </div>
             <div className="NavMenu">
               <ul className="NavItem">
