@@ -5,36 +5,36 @@ import F4 from "../components/assets/img/F4.png"
 
 const products = [
   {
-    id: 1,
+    id: '1',
     nombre: "IceCream",
     desc: "Chocolate & Vainilla",
     precio: 12.5,
     img: F1,
-    categoria: "icecreams",
+    categoria: 'helado',
   },
   {
-    id: 2,
+    id: '2',
     nombre: "Strawberries",
     desc: "Fresh Strawerries",
     precio: 14.5,
     img: F2,
-    categoria: "fruits",
+    categoria: "frutas",
   },
   {
-    id: 3,
+    id: '3',
     nombre: "Chicken Kebab",
     desc: "Mixed Kebab Plate",
     precio: 12.0,
     img: F3,
-    categoria: "chicken",
+    categoria: "hamburguesas",
   },
   {
-    id: 4,
+    id: '4',
     nombre: "Fish Kebab",
     desc: "Mixed Fish Kebab",
     precio: 11.0,
     img: F4,
-    categoria: "fish",
+    categoria: "pezcado",
   }
 ];
 
@@ -42,6 +42,22 @@ export const dataProducts = () => {
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
             resolve(products)
-        }, 2000)
+        }, 500)
     })
+}
+
+export const dataProductsByCategory = (categoryId) => {
+  return new Promise ((resolve, reject) => {
+      setTimeout(() => {
+          resolve(products.filter(prod => prod.categoria === categoryId))
+      }, 500)
+  })
+}
+
+export const dataProductsId = (id) => {
+  return new Promise((resolve, reject) => {
+      setTimeout(() => {
+          resolve(products.find(prod => prod.id === id))
+      }, 500)
+  })
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { FcShop } from "react-icons/fc";
 import "./nav.css";
 import Logo from "./logo.png";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -11,15 +12,14 @@ const NavBar = () => {
           <div className="NavbarContainer">
             <div className="NavLogo">
               <img src={Logo} />
-              <p>House Food</p>
+              <Link to='/' ><p>House Food</p></Link>
             </div>
             <div className="NavMenu">
               <ul className="NavItem">
-                <li className="NavLinks">HAMBURGUESAS</li>
-                <li className="NavLinks">PIZZAS</li>
-                <li className="NavLinks">PEZCADO</li>
-                <li className="NavLinks">FRUTAS</li>
-                <li className="NavLinks">HELADOS</li>
+                <Link to='/category/hamburguesas' className="NavLinks">HAMBURGUESAS</Link>
+                <Link to='/category/pezcado'  className="NavLinks">PEZCADO</Link>
+                <Link to='/category/frutas'  className="NavLinks">FRUTAS</Link>
+                <Link to='/category/helado' className="NavLinks">HELADOS</Link>
               </ul>
             </div>
             <div className="IconShop">
