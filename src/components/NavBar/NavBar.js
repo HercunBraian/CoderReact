@@ -3,8 +3,14 @@ import { FcShop } from "react-icons/fc";
 import "./nav.css";
 import Logo from "./logo.png";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 
 const NavBar = () => {
+
+  const {prodCantidad} = useContext(CartContext)
+
+  const totalCantidad = prodCantidad()
   return (
     <div>
       <>
@@ -23,7 +29,7 @@ const NavBar = () => {
               </ul>
             </div>
             <div className="IconShop">
-              <FcShop />
+              <FcShop /> {totalCantidad}
             </div>
           </div>
         </div>
