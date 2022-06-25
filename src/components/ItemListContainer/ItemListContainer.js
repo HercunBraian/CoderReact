@@ -1,50 +1,70 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { dataProducts, dataProductsByCategory } from "../asyncmock";
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom";
 import { Loading } from '../Loading/Loading';
 
-const ItemListContainer = ({props}) => {
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { db } from "../services/firebase";
 
-  const [products, setProducts] = useState([]);
-  const { categoryId } = useParams ()
+const ItemListContainer = ({ greeting }) => {
+  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    setLoading(true)
+  const { categoryId } = useParams()
 
-    if(!categoryId){
-      dataProducts().then(response => {
-        setProducts(response)
+  useEffect(() => {
+      setLoading(true)
+
+      const collectionRef = categoryId 
+          ? query(collection(db, 'products'), where('categoria', '==', categoryId)) 
+          : collection(db, 'products')
+
+      getDocs(collectionRef).then(response => {
+          const products = response.docs.map(doc => {
+              return { id: doc.id, ...doc.data() }
+          })
+          setProducts(products)
       }).catch(error => {
-        console.log(error)
+          console.log(error)
       }).finally(() => {
-        setLoading(false)
+          setLoading(false)
       })
-    } else {
-      dataProductsByCategory(categoryId).then(response => {
-        setProducts(response)
-      }).catch(error => {
-        console.log(error)
-      }).finally(() => {
-        setLoading(false)
-      })
-    }
+
+      // if(!categoryId) {
+      //     getProducts().then(response => {
+      //         setProducts(response)
+      //     }).catch(error => {
+      //         console.log(error)
+      //     }).finally(() => {
+      //         setLoading(false)
+      //     })
+      // } else {
+      //     getProductsByCategory(categoryId).then(response => {
+      //         setProducts(response)
+      //     }).catch(error => {
+      //         console.log(error)
+      //     }).finally(() => {
+      //         setLoading(false)
+      //     })
+      // }
   }, [categoryId])
 
 
-  if(loading){
-    return <Loading />
-  
+  if(loading) {
+      return <h1>Loading...</h1>
   }
 
+  return(
+      <div className='ItemListContainer'>
+          <h1>{ greeting }</h1>
+          { 
+              products.length > 0 
+                  ? <ItemList products={products} />
+                  : <h2>No hay productos</h2>
+          }
+      </div>
+  )
+}
 
-  return (
-    <div>
-        <ItemList products={products} />
-    </div>
-  );
-};
-
-export default ItemListContainer;
+export default ItemListContainer

@@ -23,8 +23,8 @@ const NavBar = () => {
             <div className="NavMenu">
               <ul className="NavItem">
                 <Link to='/category/hamburguesas' className="NavLinks">HAMBURGUESAS</Link>
-                <Link to='/category/pezcado'  className="NavLinks">PEZCADO</Link>
-                <Link to='/category/frutas'  className="NavLinks">FRUTAS</Link>
+                <Link to='/category/milanesa'  className="NavLinks">MILANESAS</Link>
+                <Link to='/category/sushi'  className="NavLinks">SUSHI</Link>
                 <Link to='/category/helado' className="NavLinks">HELADOS</Link>
               </ul>
             </div>

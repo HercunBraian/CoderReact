@@ -5,6 +5,8 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {CartProvider} from './context/CartContext'
+import { NotificacionProvider } from './components/notification/Notificacion';
+import Cart from './components/Cart/Cart';
 
 export const Context = createContext();
 
@@ -12,17 +14,19 @@ function App() {
 
   return (
     <div>
-      <CartProvider>
-          <BrowserRouter>
-            <NavBar/>
-            <Routes>
-              <Route path='/' element={<ItemListContainer />} />
-              <Route path='/detail/:productId' element={<ItemDetailContainer />} />
-              <Route path='/category/:categoryId' element={<ItemListContainer />} />
-              <Route path='/cart' element={<h1>CARRITO</h1>} />
-            </Routes>
-          </BrowserRouter>
-        </CartProvider>
+      <NotificacionProvider>
+        <CartProvider>
+            <BrowserRouter>
+              <NavBar/>
+              <Routes>
+                <Route path='/' element={<ItemListContainer />} />
+                <Route path='/detail/:productId' element={<ItemDetailContainer />} />
+                <Route path='/category/:categoryId' element={<ItemListContainer />} />
+                <Route path='/cart' element={<Cart />}/>
+              </Routes>
+            </BrowserRouter>
+          </CartProvider>
+        </NotificacionProvider>
     </div>
   );
 }
