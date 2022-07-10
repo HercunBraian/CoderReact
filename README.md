@@ -4,7 +4,7 @@ Este proyecto es un Ecommerce de productos Gamers, la idea es continuar con el d
 
 ## Funcionamiento
 
-<img src="/src/components/Animacion/animation.gif" />
+<img src="/public/Animation.gif" />
 
 ## Construido con:
 
