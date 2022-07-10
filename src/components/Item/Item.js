@@ -1,16 +1,17 @@
 import "./Item.css";
-import { Link } from 'react-router-dom'
-import { useContext } from "react";
-import { Context } from "../../App";
+import { Link } from "react-router-dom";
 
 const Item = ({ id, nombre, precio, img }) => {
   return (
-      
-    <div className="itemCard">
-      <img className="itemImg" src={img} alt={nombre} />
-      <p>{nombre}</p>
-      <p><span>$</span>{precio}</p>
-      <Link to={`/detail/${id}`} className='Option'>Ver detalle</Link>
+    <div class="product-item mb-4">
+      <img src={img} alt={nombre} />
+      <h3>{nombre}</h3>
+
+      <h6>${precio}</h6>
+
+      <button class="buy-2">
+        <Link to={`/detail/${id}`}>Ver detalle</Link>
+      </button>
     </div>
   );
 };

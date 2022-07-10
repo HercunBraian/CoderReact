@@ -19,3 +19,15 @@
     cursor: pointer;
     outline: inherit;
 }
+
+.colSm{
+    width: 156px;
+}
+
+.buttonOrder{
+    text-decoration:none;
+}
+
+.buttonOrder:hover{
+    color: #FFFFFF;
+}

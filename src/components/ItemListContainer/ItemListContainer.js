@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom";
 import { Loading } from '../Loading/Loading';
-
 import { getDocs, collection, query, where } from 'firebase/firestore'
 import { db } from "../services/firebase";
+import "../ItemListContainer/ItemListContainer.css"
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -31,33 +31,18 @@ const ItemListContainer = ({ greeting }) => {
           setLoading(false)
       })
 
-      // if(!categoryId) {
-      //     getProducts().then(response => {
-      //         setProducts(response)
-      //     }).catch(error => {
-      //         console.log(error)
-      //     }).finally(() => {
-      //         setLoading(false)
-      //     })
-      // } else {
-      //     getProductsByCategory(categoryId).then(response => {
-      //         setProducts(response)
-      //     }).catch(error => {
-      //         console.log(error)
-      //     }).finally(() => {
-      //         setLoading(false)
-      //     })
-      // }
   }, [categoryId])
 
 
   if(loading) {
-      return <h1>Loading...</h1>
+      return <Loading />
   }
 
   return(
-      <div className='ItemListContainer'>
-          <h1>{ greeting }</h1>
+      <div className='container'>
+          <div class="text-center mt-5">
+                    <h2 class="linea"><span>TIENDA BHTECH</span></h2>
+                </div>
           { 
               products.length > 0 
                   ? <ItemList products={products} />

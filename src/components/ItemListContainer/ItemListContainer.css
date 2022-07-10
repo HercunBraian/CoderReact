@@ -1,0 +1,19 @@
+.linea {
+    position: relative;
+    z-index: 1; }
+
+.linea:before {
+    border-top: 2px solid #790f83;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    z-index: -1; }
+
+    .linea span {
+        background: #fff;
+        padding: 0 15px; }
