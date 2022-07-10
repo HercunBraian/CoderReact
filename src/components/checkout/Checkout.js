@@ -114,7 +114,7 @@ const Checkout = () => {
                         />
                       </div>
                       <div className="form-group my-3">
-                        <button class="btn btn-outline-danger me-3 checkout"><Link className="text-decoration-none " to="/">VOLVER</Link></button>
+                        <button className="btn btn-outline-danger me-3 checkout"><Link className="text-decoration-none " to="/">VOLVER</Link></button>
                         <button className="btn btn-outline-success">ENVIAR</button>
                       </div>
                     </div>

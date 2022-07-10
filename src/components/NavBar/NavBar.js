@@ -1,5 +1,4 @@
 import React from "react";
-import { FcShop } from "react-icons/fc";
 import "./nav.css";
 import Logo from "./navlogo.webp";
 import { Link } from "react-router-dom";

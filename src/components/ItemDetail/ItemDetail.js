@@ -26,7 +26,7 @@ const ItemDetail = ({ id, nombre, precio, img, desc, categoria }) => {
     <div className="col-md-6 mb-4 d-flex justify-content-center ">
     <img className="imgCard" src={img} alt={nombre} />
     </div>
-    <div class="col-md-6 mb-4">
+    <div className="col-md-6 mb-4">
     <div className="p-4">
     <div className="mb-3">
                   <a href="">

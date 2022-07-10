@@ -40,8 +40,8 @@ const ItemListContainer = () => {
 
   return(
       <div className='container'>
-          <div class="text-center mt-5">
-                    <h2 class="linea"><span>TIENDA BHTECH</span></h2>
+          <div className="text-center mt-5">
+                    <h2 className="linea"><span>TIENDA BHTECH</span></h2>
                 </div>
           { 
               products.length > 0 

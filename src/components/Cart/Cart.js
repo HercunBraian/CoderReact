@@ -10,8 +10,8 @@ const Cart = () => {
   const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext);
 
   if (getQuantity() === 0) {
-    return       <div class="text-center mt-5 mb-5">
-    <h2 class="linea">
+    return       <div className="text-center mt-5 mb-5">
+    <h2 className="linea">
       <span>CARRITO DE COMPRAS VACIO</span>
     </h2>
   </div>
@@ -19,8 +19,8 @@ const Cart = () => {
 
   return (
     <div>
-      <div class="text-center mt-5 mb-5">
-        <h2 class="linea">
+      <div className="text-center mt-5 mb-5">
+        <h2 className="linea">
           <span>CARRITO DE COMPRAS</span>
         </h2>
       </div>
@@ -53,14 +53,14 @@ const Cart = () => {
               <td colSpan={4}></td>
               <td className="text-center">
                 <button
-                  class="btn btn-outline-danger"
+                  className="btn btn-outline-danger"
                   onClick={() => clearCart()}
                 >
                   Limpiar carrito
                 </button>
               </td>
               <td className="text-center">
-                <button class="btn btn-outline-success buttonOrder">
+                <button className="btn btn-outline-success buttonOrder">
                   <Link
                     className="text-decoration-none buttonOrder"
                     to="/checkout"

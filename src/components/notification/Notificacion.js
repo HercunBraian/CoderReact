@@ -20,7 +20,7 @@ export  const NotificacionProvider = ({children}) => {
                     message: ''
                 })
 
-        const setNotification = (sev, msg, timeout) => {
+        const setNotification = (msg, timeout) => {
             setMsgConfig({message: msg})
             setTimeout(() => {
                 setMsgConfig({ ...msgConfig, message: '' })
