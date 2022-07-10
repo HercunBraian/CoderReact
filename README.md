@@ -4,7 +4,7 @@ Este proyecto es un Ecommerce de productos Gamers, la idea es continuar con el d
 
 ## Funcionamiento
 
-In the project directory, you can run:
+<img src="/arc/components/Animacion/animacion.gif" />
 
 ## Construido con:
 
@@ -16,22 +16,23 @@ In the project directory, you can run:
 
 La estructura de datos de Firabe esta armada de la siguiente manera
 
-* Productos
+- **Productos**
+
 - Nombre
 - Imagen
 - Descripcion
 - Precio
 - Categoria
 
-* Ordenes
+- **Ordenes**
 
-Comprador
+- **Comprador**
 - Nombre
 - Telefono
 - Direccion
 - Email
 
-Producto
+- **Producto**
 - Array de Productos
 - Total
 
